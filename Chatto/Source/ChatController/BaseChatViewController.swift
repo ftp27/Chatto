@@ -298,7 +298,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
         return (firstItemMoved?.indexPathOld as IndexPath?, firstItemMoved?.indexPathNew as IndexPath?)
     }
     
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.collectionView.isDragging {
             self.autoLoadMoreContentIfNeeded()
         }
