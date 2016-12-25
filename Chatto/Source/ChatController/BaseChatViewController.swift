@@ -297,6 +297,12 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
         let firstItemMoved = changes.movedIndexPaths.first
         return (firstItemMoved?.indexPathOld as IndexPath?, firstItemMoved?.indexPathNew as IndexPath?)
     }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.collectionView.isDragging {
+            self.autoLoadMoreContentIfNeeded()
+        }
+    }
 }
 
 extension BaseChatViewController { // Rotation
